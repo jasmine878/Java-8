@@ -28,9 +28,12 @@ public class ConsumerInterface {
         list.add(3);
 
         //Implement modify using accept()
-        modify.accept(list);
+//        modify.accept(list);
 
-        //Implement disList using accept()
-        dispList.accept(list);
+        //Implement dispList using accept()
+//        dispList.accept(list);
+
+        //Using andThen()
+        modify.andThen(dispList).accept(list);
     }
 }
