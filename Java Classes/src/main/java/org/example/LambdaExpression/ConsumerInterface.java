@@ -1,4 +1,4 @@
-package org.example.LambdaPredicates;
+package org.example.LambdaExpression;
 
 import java.util.ArrayList;
 import java.util.List;
