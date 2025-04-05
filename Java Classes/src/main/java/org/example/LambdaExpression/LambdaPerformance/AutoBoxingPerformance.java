@@ -1,4 +1,4 @@
-package org.example.LambdaPerformance;
+package org.example.LambdaExpression.LambdaPerformance;
 
 import java.util.Comparator;
 

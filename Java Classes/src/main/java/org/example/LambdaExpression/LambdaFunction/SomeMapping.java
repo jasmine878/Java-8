@@ -1,6 +1,6 @@
-package org.example.LambdaFunction;
+package org.example.LambdaExpression.LambdaFunction;
 
-import org.example.LambdaFunction.model.User;
+import org.example.LambdaExpression.LambdaFunction.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

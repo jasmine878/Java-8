@@ -1,4 +1,4 @@
-package org.example.LambdaFunction.model;
+package org.example.LambdaExpression.LambdaFunction.model;
 
 public class User {
     private String name;
