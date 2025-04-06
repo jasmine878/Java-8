@@ -1,4 +1,4 @@
-package org.example.LambdaExpression.LambdaFunction;
+package org.example.LambdaExpression.Function;
 
 public class User {
     private String name;

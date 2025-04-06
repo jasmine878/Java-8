@@ -1,4 +1,4 @@
-package org.example.LambdaExpression.LambdaFunction;
+package org.example.LambdaExpression.Function;
 
 import java.util.ArrayList;
 import java.util.List;
