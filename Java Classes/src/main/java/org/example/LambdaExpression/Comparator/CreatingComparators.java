@@ -12,5 +12,10 @@ public class CreatingComparators {
 
         stringsArr.sort(cmp);
         System.out.println(stringsArr);
+
+        Comparator<String> cmpLength = (s1, s2) -> Integer.compare(s1.length(), s2.length());
+
+        stringsArr.sort(cmpLength);
+        System.out.println(stringsArr);
     }
 }
