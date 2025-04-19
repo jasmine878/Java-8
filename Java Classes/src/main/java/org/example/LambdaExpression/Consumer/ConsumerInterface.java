@@ -1,6 +1,7 @@
 package org.example.LambdaExpression.Consumer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -35,5 +36,20 @@ public class ConsumerInterface {
 
         //Using andThen()
         modify.andThen(dispList).accept(list);
+        System.out.println();
+
+        class InnerConsumer<String> implements Consumer<String> {
+            @Override
+            public void accept(String string) {
+                System.out.println(string);
+            }
+        }
+
+        InnerConsumer innerConsumer = new InnerConsumer<String>();
+
+        String[] colorsArray = {"red", "green", "blue"};
+
+        ArrayList<String> colorsList = new ArrayList<>(Arrays.asList(colorsArray));
+        colorsList.forEach(innerConsumer);
     }
 }
