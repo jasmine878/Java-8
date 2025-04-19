@@ -41,7 +41,7 @@ public class ConsumerInterface {
         class InnerConsumer<String> implements Consumer<String> {
             @Override
             public void accept(String string) {
-                System.out.println(string);
+                System.out.println(" - " + string);
             }
         }
 
@@ -51,5 +51,14 @@ public class ConsumerInterface {
 
         ArrayList<String> colorsList = new ArrayList<>(Arrays.asList(colorsArray));
         colorsList.forEach(innerConsumer);
+        System.out.println();
+        Consumer<String> anonymousClass = new Consumer<String>() {
+            @Override
+            public void accept(String string) {
+                System.out.println(" - " + string);
+            }
+        };
+
+        colorsList.forEach(anonymousClass);
     }
 }
