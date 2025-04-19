@@ -30,5 +30,10 @@ public class UserComparator {
         users.sort(cmpNameAge);
 
         users.forEach(user -> System.out.println(user));
+        System.out.println();
+
+        Comparator<User> cmpReverseName = cmpName.reversed();
+        users.sort(cmpReverseName);
+        users.forEach(user -> System.out.println(user));
     }
 }
