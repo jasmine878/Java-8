@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.ToIntFunction;
 
 public class CreatingComparators {
     public static void main(String[] args) {
@@ -25,5 +26,13 @@ public class CreatingComparators {
 
         stringsArr.sort(cmpLength2);
         System.out.println(stringsArr);
+
+        ToIntFunction<String> listByLength2 = number -> number.length();
+
+        Comparator<String> cmpLength3 = Comparator.comparingInt(listByLength2);
+
+        stringsArr.sort(cmpLength3);
+        System.out.println(stringsArr);
+
     }
 }
