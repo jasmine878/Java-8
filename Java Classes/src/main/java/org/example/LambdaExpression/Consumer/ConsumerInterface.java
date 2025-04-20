@@ -60,5 +60,10 @@ public class ConsumerInterface {
         };
 
         colorsList.forEach(anonymousClass);
+        System.out.println();
+
+//        Consumer<String> lambdaConsumer = (String displayColor) -> {System.out.println(" - " + displayColor);};
+        Consumer<String> lambdaConsumer = displayColor -> System.out.println(" - " + displayColor);
+        colorsList.forEach(lambdaConsumer);
     }
 }
