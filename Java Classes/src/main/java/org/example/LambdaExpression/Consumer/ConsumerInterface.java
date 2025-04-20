@@ -68,5 +68,9 @@ public class ConsumerInterface {
         System.out.println();
 
         colorsList.forEach(displayColor -> System.out.println(" - " + displayColor));
+        System.out.println();
+
+        colorsList.sort((color1, color2) -> color1.compareTo(color2));
+        colorsList.forEach(anonymousClass);
     }
 }
