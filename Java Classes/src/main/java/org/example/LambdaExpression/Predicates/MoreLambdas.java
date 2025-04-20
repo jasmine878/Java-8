@@ -24,6 +24,11 @@ public class MoreLambdas {
         aList1.forEach(color -> System.out.println(" - " + color));
         System.out.println();
 
+        // Using Predicate with a Lambda expression for aList 2
+        aList2.removeIf(color -> color.endsWith("e"));
+        aList2.forEach(color -> System.out.println(" - " + color));
+        System.out.println();
+
 
         List<String> strings = new ArrayList<>(List.of("one", "two", "three", "four", "five"));
 
