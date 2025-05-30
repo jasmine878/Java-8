@@ -22,6 +22,6 @@ public class MapFilterReduce {
         Stream<User> stream =  people.stream();
         Stream<String> nameStream = stream.map(p -> p.getName());
         Stream<String> filteredNames = nameStream.filter(name -> name.isEmpty());
-
+        long count = filteredNames.count();
     }
 }
