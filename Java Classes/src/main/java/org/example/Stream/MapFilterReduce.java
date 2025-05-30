@@ -20,6 +20,8 @@ public class MapFilterReduce {
         List<User> people = List.of(p1, p2, p3, p4, p5, p6, p7, p8, p9);
 
         Stream<User> stream =  people.stream();
+        Stream<String> nameStream = stream.map(p -> p.getName());
+
 
     }
 }
