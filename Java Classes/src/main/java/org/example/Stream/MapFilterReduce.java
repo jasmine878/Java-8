@@ -16,12 +16,16 @@ public class MapFilterReduce {
         User p7 = new User("Ann", 27);
         User p8 = new User("Boris", 29);
         User p9 = new User("Emily", 34);
+        User p10 = new User("", 34);
+        User p11 = new User("", 30);
 
-        List<User> people = List.of(p1, p2, p3, p4, p5, p6, p7, p8, p9);
+        List<User> people = List.of(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11);
 
         Stream<User> stream =  people.stream();
         Stream<String> nameStream = stream.map(p -> p.getName());
         Stream<String> filteredNames = nameStream.filter(name -> name.isEmpty());
         long count = filteredNames.count();
+
+        System.out.println("Empty names = " + count);
     }
 }
