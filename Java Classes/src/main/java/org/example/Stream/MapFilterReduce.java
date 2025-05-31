@@ -21,12 +21,16 @@ public class MapFilterReduce {
 
         List<User> people = List.of(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11);
 
-        Stream<User> stream =  people.stream();
-        Stream<String> nameStream = stream.map(p -> p.getName());
-        Stream<String> emptyNames = nameStream.filter(name -> name.isEmpty());
-        long countEmptyNames = emptyNames.count();
+        //correct way to write a stream
+        long countEmptyNames =
+                people.stream()
+                        .map(p12 -> p12.getName())
+                        .filter(name1 -> name1.isEmpty())
+                        .count();
+
         System.out.println("Empty names = " + countEmptyNames);
 
+        //interittent variables are not recommended since they cannot be used in streams
         Stream<User> stream2 = people.stream();
         Stream<String> nameStream2 = stream2.map(p -> p.getName());
         Stream<String> nonEmptyNames = nameStream2.filter(name -> !name.isEmpty());
