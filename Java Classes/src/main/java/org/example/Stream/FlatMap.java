@@ -34,5 +34,12 @@ public class FlatMap {
         cities.stream()
                 .flatMap(city -> city.getUsers().stream())
                 .forEach(p -> System.out.println(p));
+
+        System.out.println();
+
+        cities.stream()
+                .flatMap(city -> city.getUsers().stream())
+                .map(p -> p.getName())
+                .forEach(name -> System.out.println(name));
     }
 }
