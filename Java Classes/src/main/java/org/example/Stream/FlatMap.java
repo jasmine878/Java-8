@@ -29,5 +29,10 @@ public class FlatMap {
                         .count();
 
         System.out.println("Count - " + count);
+        System.out.println();
+
+        cities.stream()
+                .flatMap(city -> city.getUsers().stream())
+                .forEach(p -> System.out.println(p));
     }
 }
