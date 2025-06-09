@@ -18,8 +18,13 @@ public class StreamFromArray {
         //Create a Stream using Stream.of()
         long count = Stream.of(people).count();
         System.out.println("Count = " + count);
+        System.out.println();
 
         //Create a Stream using Arrays.stream()
         Arrays.stream(people).forEach(p -> System.out.println(p));
+        System.out.println();
+
+        //Replace lambda expression in forEach() with a method reference
+        Arrays.stream(people).forEach(System.out::println);
     }
 }
