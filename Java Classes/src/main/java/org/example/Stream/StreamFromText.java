@@ -6,9 +6,15 @@ import java.nio.file.Path;
 import java.util.stream.Stream;
 
 public class StreamFromText {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Path path = Path.of("Java Classes/src/main/java/org/example/Stream/StreamFromText.java");
 
-        Stream<String> lines = Files.lines(path);
+        try (Stream<String> lines = Files.lines(path)) {
+            long count = lines.count();
+            System.out.println("Count = " + count);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
