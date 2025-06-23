@@ -7,9 +7,12 @@ public class StreamPredicate {
     public static void main(String[] args) {
         Class<?> clzz = ArrayList.class;
 
-        clzz.getSuperclass();
+//        clzz.getSuperclass();
 
-        Stream<Class<?>> classes = Stream.iterate(clzz, c -> c.getSuperclass());
+//        Stream<Class<?>> classes =
+                Stream.<Class<?>>iterate(clzz, c -> c.getSuperclass())
+                        .takeWhile(cl -> cl != null)
+                        .forEach(System.out::println);
 
     }
 }
