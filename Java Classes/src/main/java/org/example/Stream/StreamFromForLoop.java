@@ -3,6 +3,7 @@ package org.example.Stream;
 import org.example.User;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StreamFromForLoop {
     public static void main(String[] args) {
@@ -17,11 +18,15 @@ public class StreamFromForLoop {
         int sum = 0;
         int count = 0;
 
-        for (User person: people) {
-            if (person.getAge() > 20) {
-                count++;
-                sum += person.getAge();
-            }
-        }
+//        for (User person: people) {
+//            if (person.getAge() > 20) {
+//                count++;
+//                sum += person.getAge();
+//            }
+//        }
+
+        Stream<Integer> filter = people.stream()
+                .map(p -> p.getAge())
+                .filter(age -> age > 20);
     }
 }
