@@ -25,7 +25,7 @@ public class StreamFromForLoop {
 //        }
 
         Double average = people.stream()
-                .mapToInt(p -> p.getAge())
+                .mapToInt(User::getAge)
                 .filter(age -> age > 20)
                 .average()
                 .orElseThrow();
