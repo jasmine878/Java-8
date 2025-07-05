@@ -30,9 +30,21 @@ public class MovieRental {
         int frequentRenterPoints = 0;
         String statement = composeHeader();
 
+//        for (Rental rental : rentals) {
+//            totalAmount += computeRentalAmount(rental);
+//            frequentRenterPoints += getFrequentRenterPoints(rental);
+//            statement += computeStatementLine(rental);
+//        }
+
         for (Rental rental : rentals) {
             totalAmount += computeRentalAmount(rental);
+        }
+
+        for (Rental rental : rentals) {
             frequentRenterPoints += getFrequentRenterPoints(rental);
+        }
+
+        for (Rental rental : rentals) {
             statement += computeStatementLine(rental);
         }
 
