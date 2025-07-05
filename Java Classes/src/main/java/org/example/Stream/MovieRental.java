@@ -26,9 +26,9 @@ public class MovieRental {
     private List<Rental> rentals = new ArrayList<>();
 
     public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        String statement = composeHeader();
+//        double totalAmount = 0;
+//        int frequentRenterPoints = 0;
+//        String statement = composeHeader();
 
 //        for (Rental rental : rentals) {
 //            totalAmount += computeRentalAmount(rental);
@@ -36,13 +36,19 @@ public class MovieRental {
 //            statement += computeStatementLine(rental);
 //        }
 
+        double totalAmount = 0;
+
         for (Rental rental : rentals) {
             totalAmount += computeRentalAmount(rental);
         }
 
+        int frequentRenterPoints = 0;
+
         for (Rental rental : rentals) {
             frequentRenterPoints += getFrequentRenterPoints(rental);
         }
+
+        String statement = composeHeader();
 
         for (Rental rental : rentals) {
             statement += computeStatementLine(rental);
