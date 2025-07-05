@@ -37,7 +37,7 @@ public class MovieRental {
 //        }
 
         double totalAmount = rentals.stream()
-                .mapToDouble(rental -> computeRentalAmount(rental))
+                .mapToDouble(this::computeRentalAmount)
                 .sum();
 
         for (Rental rental : rentals) {
