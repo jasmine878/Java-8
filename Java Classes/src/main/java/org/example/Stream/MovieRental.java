@@ -36,7 +36,9 @@ public class MovieRental {
 //            statement += computeStatementLine(rental);
 //        }
 
-        double totalAmount = 0;
+        double totalAmount = rentals.stream()
+                .mapToDouble(rental -> computeRentalAmount(rental))
+                .sum();
 
         for (Rental rental : rentals) {
             totalAmount += computeRentalAmount(rental);
