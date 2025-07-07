@@ -4,6 +4,7 @@ import org.example.Rental;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MovieRental {
 
@@ -36,25 +37,37 @@ public class MovieRental {
 //            statement += computeStatementLine(rental);
 //        }
 
+//        double totalAmount = 0;
+
+//        for (Rental rental : rentals) {
+//            totalAmount += computeRentalAmount(rental);
+//        }
+
+//        int frequentRenterPoints = 0;
+
+//        for (Rental rental : rentals) {
+//            frequentRenterPoints += getFrequentRenterPoints(rental);
+//        }
+
+//        String statement = composeHeader();
+
+//        for (Rental rental : rentals) {
+//            statement += computeStatementLine(rental);
+//        }
+
         double totalAmount = rentals.stream()
                 .mapToDouble(this::computeRentalAmount)
                 .sum();
 
-        for (Rental rental : rentals) {
-            totalAmount += computeRentalAmount(rental);
-        }
-
-        int frequentRenterPoints = 0;
-
-        for (Rental rental : rentals) {
-            frequentRenterPoints += getFrequentRenterPoints(rental);
-        }
+        int frequentRenterPoints = rentals.stream()
+                .mapToInt(this::getFrequentRenterPoints)
+                .sum();
 
         String statement = composeHeader();
 
-        for (Rental rental : rentals) {
-            statement += computeStatementLine(rental);
-        }
+        statement += rentals.stream()
+                .map(this::computeStatementLine)
+                .collect(Collectors.joining());
 
         statement += composeFooter(totalAmount, frequentRenterPoints);
 
@@ -62,7 +75,7 @@ public class MovieRental {
     }
 
     private String composeHeader() {
-        return "Statement for the rental of " + rentals.size() + "movies\n";
+        return "Statement for the rental of " + rentals.size() + " movies\n";
     }
 
     private double computeRentalAmount(Rental rental) {
